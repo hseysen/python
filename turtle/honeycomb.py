@@ -1,0 +1,76 @@
+import turtle
+
+
+s = 4.5                 # Scale
+offx = -300             # X Offset
+offy = -260             # Y Offset
+BG = "#F8E0C8"          # Background Color
+AZURE = "#4B8BBE"       # Top-Half Color
+SUNGLOW = "#FFD43B"     # Bottom-Half Color
+
+
+turtle.speed(3)
+turtle.bgcolor(BG)
+
+turtle.penup()
+turtle.goto(67.2420*s+offx, 75.3275*s+offy)
+turtle.pendown()
+turtle.color(AZURE)
+turtle.begin_fill()
+turtle.goto(35.5761*s+offx, 75.3275*s+offy)
+turtle.seth(194)
+turtle.circle(24.3321*s, 122)
+turtle.goto(43.1296*s+offx, 32.8332*s+offy)
+turtle.goto(43.1296*s+offx, 40.7956*s+offy)
+turtle.seth(270)
+turtle.circle(15*s, -90)
+turtle.goto(73.2486*s+offx, 55.7956*s+offy)
+turtle.seth(0)
+turtle.circle(15*s, 90)
+turtle.goto(88.2486*s+offx, 89.4119*s+offy)
+turtle.seth(136)
+turtle.circle(30.3012*s, 88)
+turtle.goto(46.09*s+offx, 78.5646*s+offy)
+turtle.goto(67.242*s+offx, 78.5646*s+offy)
+turtle.goto(67.242*s+offx, 75.3275*s+offy)
+turtle.seth(0)
+turtle.end_fill()
+turtle.penup()
+turtle.goto(54.9679*s+offx, 83.6403*s+offy)
+turtle.pendown()
+turtle.color(BG)
+turtle.begin_fill()
+turtle.circle(3.8353*s, 360)
+turtle.end_fill()
+
+
+turtle.penup()
+turtle.goto(67.1486*s+offx, 33.586*s+offy)
+turtle.pendown()
+turtle.color(SUNGLOW)
+turtle.begin_fill()
+turtle.goto(98.8145*s+offx, 33.586*s+offy)
+turtle.seth(14)
+turtle.circle(24.3321*s, 122)
+turtle.goto(91.2609*s+offx, 76.0803*s+offy)
+turtle.goto(91.2609*s+offx, 68.1179*s+offy)
+turtle.seth(90)
+turtle.circle(15*s, -90)
+turtle.goto(61.142*s+offx, 53.1179*s+offy)
+turtle.seth(-180)
+turtle.circle(15*s, 90)
+turtle.goto(46.1420*s+offx, 19.5016*s+offy)
+turtle.seth(-44)
+turtle.circle(30.3012*s, 88)
+turtle.goto(88.3006*s+offx, 30.3489*s+offy)
+turtle.goto(67.1486*s+offx, 30.3489*s+offy)
+turtle.goto(67.1486*s+offx, 33.586*s+offy)
+turtle.seth(-180)
+turtle.end_fill()
+turtle.penup()
+turtle.goto(79.4227*s+offx, 25.2732*s+offy)
+turtle.pendown()
+turtle.color(BG)
+turtle.begin_fill()
+turtle.circle(3.8353*s, 360)
+turtle.end_fill()
