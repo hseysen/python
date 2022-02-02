@@ -12,7 +12,7 @@ class TicTacToeButton(tk.Button):
         global finished, move_order, output, win, los
         if not finished:
             key = "X" if move_order == 1 else "O"
-            super().configure(text=key, state="disabled", font=KFONT)
+            self.configure(text=key, state="disabled", font=KFONT)
             move_order = (move_order + 1) % 2
             b.board[self.r][self.c] = key
             if check_win() in ["X", "O"]:
@@ -58,10 +58,10 @@ class FileManager:
         self.canvas = canvas
 
     def update_file(self, wn, ls):
+        global points
         with open(self.filename, "w") as wf:
             wf.write(f"{wn}\n{ls}")
-            tk.Label(self.canvas, text="X:\t{:6}\nO:\t{:6}".format(wn, ls), bg="black", fg="cyan",
-                     font=("Calibri", 14, "bold")).place(relx=0.79, rely=0.3, relheight=0.4, relwidth=0.2)
+            points.configure(text="X:\t{:6}\nO:\t{:6}".format(wn, ls))
 
     def read_file(self):
         if not os.path.exists(self.filename):
@@ -89,6 +89,9 @@ def check_win():
     return " "
 
 
+TFONT = ("Calibri", 40)
+OFONT = ("Calibri", 20)
+PFONT = ("Calibri", 14, "bold")
 RFONT = ("Calibri", 20, "bold")
 KFONT = ("Calibri", 60, "bold")
 HEIGHT = 640
@@ -99,13 +102,14 @@ finished = False
 move_order = 1
 
 output: tk.Label
+points: tk.Label
 p: List[List[TicTacToeButton]] = [[], [], []]
 fm: FileManager
 b = Places()
 
 
 def main():
-    global p, output, fm, win, los
+    global p, output, points, fm, win, los
     root = tk.Tk()
     root.title("Tic Tac Toe")
 
@@ -115,8 +119,8 @@ def main():
     fm = FileManager(canvas)
     win, los = fm.read_file()
 
-    tk.Label(canvas, text="X:\t{:6}\nO:\t{:6}".format(win, los), bg="black", fg="cyan",
-             font=("Calibri", 14, "bold")).place(relx=0.79, rely=0.3, relheight=0.4, relwidth=0.2)
+    points = tk.Label(canvas, text="X:\t{:6}\nO:\t{:6}".format(win, los), bg="black", fg="cyan", font=PFONT)
+    points.place(relx=0.79, rely=0.3, relheight=0.4, relwidth=0.2)
 
     p[0].append(TicTacToeButton(canvas, "00"))
     p[0].append(TicTacToeButton(canvas, "01"))
@@ -128,28 +132,28 @@ def main():
     p[2].append(TicTacToeButton(canvas, "21"))
     p[2].append(TicTacToeButton(canvas, "22"))
 
-    p[0][0].place(relx=0.325, rely=0.25, relwidth=0.155, relheight=0.1525, anchor="n")
-    p[0][1].place(relx=0.497, rely=0.25, relwidth=0.18, relheight=0.1525, anchor="n")
-    p[0][2].place(relx=0.669, rely=0.25, relwidth=0.155, relheight=0.1525, anchor="n")
-    p[1][0].place(relx=0.325, rely=0.405, relwidth=0.155, relheight=0.183, anchor="n")
-    p[1][1].place(relx=0.497, rely=0.405, relwidth=0.18, relheight=0.183, anchor="n")
-    p[1][2].place(relx=0.669, rely=0.405, relwidth=0.155, relheight=0.183, anchor="n")
-    p[2][0].place(relx=0.325, rely=0.592, relwidth=0.155, relheight=0.153, anchor="n")
-    p[2][1].place(relx=0.497, rely=0.592, relwidth=0.18, relheight=0.153, anchor="n")
-    p[2][2].place(relx=0.669, rely=0.592, relwidth=0.155, relheight=0.153, anchor="n")
+    p[0][0].place(relx=0.325, rely=0.250, relwidth=0.155, relheight=0.1525, anchor="n")
+    p[0][1].place(relx=0.497, rely=0.250, relwidth=0.180, relheight=0.1525, anchor="n")
+    p[0][2].place(relx=0.669, rely=0.250, relwidth=0.155, relheight=0.1525, anchor="n")
+    p[1][0].place(relx=0.325, rely=0.405, relwidth=0.155, relheight=0.1830, anchor="n")
+    p[1][1].place(relx=0.497, rely=0.405, relwidth=0.180, relheight=0.1830, anchor="n")
+    p[1][2].place(relx=0.669, rely=0.405, relwidth=0.155, relheight=0.1830, anchor="n")
+    p[2][0].place(relx=0.325, rely=0.592, relwidth=0.155, relheight=0.1530, anchor="n")
+    p[2][1].place(relx=0.497, rely=0.592, relwidth=0.180, relheight=0.1530, anchor="n")
+    p[2][2].place(relx=0.669, rely=0.592, relwidth=0.155, relheight=0.1530, anchor="n")
 
     canvas.create_line(1.625 * HEIGHT / 4, 1 * WIDTH / 4, 1.625 * HEIGHT / 4, 3 * WIDTH / 4, fill="red", width=2)
     canvas.create_line(2.375 * HEIGHT / 4, 1 * WIDTH / 4, 2.375 * HEIGHT / 4, 3 * WIDTH / 4, fill="red", width=2)
     canvas.create_line(1 * HEIGHT / 4, 1.625 * WIDTH / 4, 3 * HEIGHT / 4, 1.625 * WIDTH / 4, fill="red", width=2)
     canvas.create_line(1 * HEIGHT / 4, 2.375 * WIDTH / 4, 3 * HEIGHT / 4, 2.375 * WIDTH / 4, fill="red", width=2)
 
-    output = tk.Label(canvas, bg="black", fg="cyan", font=("Calibri", 20))
+    output = tk.Label(canvas, bg="black", fg="cyan", font=OFONT)
     output.place(anchor="n", relx=0.5, rely=0.8, relheight=0.1, relwidth=0.7)
 
     reset_button = ResetButton(canvas)
     reset_button.place(relx=0.5, anchor="n", rely=0.93, relheight=0.05, relwidth=0.3)
 
-    titlec = tk.Label(canvas, bg="black", fg="cyan", font=("Calibri", 40), text="Tic Tac Toe")
+    titlec = tk.Label(canvas, bg="black", fg="cyan", font=TFONT, text="Tic Tac Toe")
     titlec.place(anchor="n", relx=0.5, rely=0.03, relwidth=0.9, relheight=0.1)
 
     root.mainloop()
