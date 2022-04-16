@@ -8,7 +8,7 @@ Bu repository [CIK Academy](https://www.youtube.com/c/cikacademy) YouTube kanal�
 
 ### Windows
 
-Kanaldakı dərslərdə daha stabil versiya hesab etdiyimiz Python 3.7 istifadə olunur. Əgər Windows əməliyyat sisteminizdə əvvəlcədən Pythonun başqa versiyasını yükləmisinizsə və çoxlu versiya ilə işləyə biləcəyinizə əmin deyilsinizsə, əməliyyat sisteminizdə bütün Pythonu silib yenidən yükləməyinizi tövsiyə edirik. [Bu video](https://www.youtube.com/watch?v=SF18WxxhbbA)kı addımları izləyərək Pythonu Windowsda yükləyə bilərsiniz.
+Kanaldakı dərslərdə daha stabil versiya hesab etdiyimiz Python 3.7 istifadə olunur. Əgər Windows əməliyyat sisteminizdə əvvəlcədən Pythonun başqa versiyasını yükləmisinizsə və çoxlu versiya ilə işləyə biləcəyinizə əmin deyilsinizsə, əməliyyat sisteminizdə bütün Pythonu silib yenidən yükləməyinizi tövsiyə edirik. [Bu video](https://www.youtube.com/watch?v=SF18WxxhbbA)dakı addımları izləyərək Pythonu Windowsda yükləyə bilərsiniz.
 
 ### Mac
 
