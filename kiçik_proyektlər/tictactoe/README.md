@@ -6,4 +6,4 @@ Məşhur "Tic-Tac-Toe" oyunu 3x3 lövhədə oyunçuların X və O simvollarını
 Kodda yalnız "tkinter" modulu istifadə olunduğundan, kodun işləməsi üçün əlavə heç bir paketin yüklənməsi tələb olunmur.
 
 ## YouTube
-Proyekt haqqında videonu [buradan](https://www.youtube.com/watch?v=K3lKE11ZFR0) izləyə bilərsiniz.
+Kanalın aktiv olduğu müddətdə dəstək olan hər bir kəsə təşəkkür edirəm :)
