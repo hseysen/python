@@ -7,3 +7,6 @@ Kodda "pygame", "sys", "random", "tkinter" modulları istifadə olunub. Bu modul
 ```
 > python -m pip install pygame
 ```
+
+# YouTube
+Kanalın aktiv olduğu müddətdə dəstək olan hər bir kəsə təşəkkür edirəm :)
